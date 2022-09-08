@@ -1,12 +1,11 @@
 #include <stdio.h>
 
 /**
- * main- Entry point
- *
- * Description: 'this program prints the sizes of the various data types on the host machine'
- * Return: 0 (Success)
- */
-
+* main- Entry point
+*
+* Description: 'this program prints the sizes of the various data types on the host machine'
+* Return: 0 (Success)
+*/
 int main(void)
 {
   printf("Size of a char: %d byte(s)\n", sizeof(char));

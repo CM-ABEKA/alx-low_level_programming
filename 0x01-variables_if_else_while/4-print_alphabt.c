@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - print aphabet except q and e
- *
- * Return: 0 
- */
+* main - print aphabet except q and e
+*
+* Return: 0 (Success)
+*/
 int main(void)
 {
 	char  ch;

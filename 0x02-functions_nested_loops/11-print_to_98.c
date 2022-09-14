@@ -31,15 +31,38 @@ void print_to_98(int n)
 		{
 			if (n > -10 && n < 10)
 			{
-				_putchar(n % 10 + '0');
-				_putchar(',');
-				_putchar(' ');
+				if (n > 0)
+				{
+					_putchar(n % 10 + '0');
+					_putchar(',');
+					_putchar(' ');
+				}
+				if (n < 0)
+				{
+					int ng = n * -1;
+
+					_putchar('-');
+					_putchar(ng % 10 + '0');
+				}
 			} else
 			{
-				_putchar(n / 10 + '0');
-				_putchar(n % 10 + '0');
-				if (n != 98)
+				if (n > 9)
 				{
+					_putchar(n / 10 + '0');
+					_putchar(n % 10 + '0');
+					if (n != 98)
+					{
+						_putchar(',');
+						_putchar(' ');
+					}
+				}
+				if (n < -9)
+				{
+					int lng = n * -1;
+
+					_putchar('-');
+					_putchar(lng / 10 + '0');
+					_putchar(lng % 10 + '0');
 					_putchar(',');
 					_putchar(' ');
 				}

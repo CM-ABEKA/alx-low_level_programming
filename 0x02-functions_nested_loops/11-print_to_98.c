@@ -31,7 +31,7 @@ void print_to_98(int n)
 		{
 			if (n > -10 && n < 10)
 			{
-				if (n > 0)
+				if (n >= 0)
 				{
 					_putchar(n % 10 + '0');
 					_putchar(',');
@@ -43,6 +43,8 @@ void print_to_98(int n)
 
 					_putchar('-');
 					_putchar(ng % 10 + '0');
+					_putchar(',');
+					_putchar(' ');
 				}
 			} else
 			{
@@ -68,6 +70,7 @@ void print_to_98(int n)
 				}
 			}
 		}
+
 	_putchar('\n');
 }
 

@@ -3,11 +3,12 @@
 /**
  * main - Entry point
  * @c: character to be tested
- * Return: 0
+ * Return: 0 when lower, 1 uppercase
  */
-int _isupper(int c)
+
+int _isupper(int b)
 {
-	if ((c >= 'A') && (c <= 'Z'))
+	if ((b >= 'A') && (b <= 'Z'))
 	{
 		return (1);
 	}

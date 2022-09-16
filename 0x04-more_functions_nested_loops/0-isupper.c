@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point
- *
+ * @c: character to be tested
  * Return: 0
  */
 int _isupper(int c)

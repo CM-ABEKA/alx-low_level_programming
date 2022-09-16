@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * main - Entry point
- * @c: character to be tested
+ * _isupper - Entry point
+ * @b: character to be tested
  * Return: 0 when lower, 1 uppercase
  */
 

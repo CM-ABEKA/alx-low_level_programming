@@ -12,7 +12,7 @@ void puts2(char *ch)
 
 	while (*(ch + i) != '\0')
 	{
-		if(i % 2 == 0)
+		if (i % 2 == 0)
 			putchar(*(ch + i));
 		i++;
 	}

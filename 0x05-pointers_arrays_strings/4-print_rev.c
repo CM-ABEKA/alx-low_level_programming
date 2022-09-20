@@ -15,15 +15,15 @@ void print_rev(char *ch)
 
 	for (i = 0; ch[i] != '\0'; i++)
 	{
-		len ++;
+		len++;
 	}
 
-	for (n = 0; n < len/2 ; i++)
+	for (n = 0; n < len / 2 ; i++)
 	{
 		temp = ch[i];
 		if (ch[len - i])
 		{
-			ch[i] = ch[len -i];
+			ch[i] = ch[len - i];
 		}
 		ch[len - i] = temp;
 		ch[len + 1] = '\0';

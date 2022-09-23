@@ -10,6 +10,7 @@ char *leet(char *s)
 	char a[5] = {'A', 'E', 'O', 'T', 'L'};
 	char b[5] = {'4', '3', '0', '7', '1'};
 	int i = 0, k, len = 5;
+
 	for (k = 0; s[k] != '\0'; k++)
 	{
 		i = 0;

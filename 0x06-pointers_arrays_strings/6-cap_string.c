@@ -2,13 +2,14 @@
 
 /**
  * cap_string - fuction capitalizes all the words in a string
- * @s: the string
+ * @a: the string
  * Return: Capitalized String
  */
 char *cap_string(char *a)
 {
 	int i, len, k = 0;
-	char space[] = {32, '\t', '\n', 44, ';', 46, '!', '?', '"', '(', ')', '{', '}'};
+	char space[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+
 	len = 0;
 
 	while (a[len])
@@ -23,7 +24,7 @@ char *cap_string(char *a)
 				{
 					a[i] -= 32;
 				}
-			}		
+			}
 		}
 	}
 	return (a);

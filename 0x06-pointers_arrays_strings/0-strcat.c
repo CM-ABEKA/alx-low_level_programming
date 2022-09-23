@@ -5,33 +5,22 @@
  * _strcat - concactenates two strings
  * @dest: destination string
  * @src: source string
- * Return: retur concat string
+ *
+ * Return: return concated string
  */
-int _strln(char *str);
 char *_strcat(char *dest, char *src)
 {
-	int i;
-	int ln_d = _strln(dest);
-	int ln_s = _strln(src);
+	int i, j, k;
+	int ln_d = 0;
+	int ln_s = 0;
 
+	for (j = 0; dest[j] != '\0'; j++)
+		ln_d++;
+	for (k = 0; src[k] != '\0'; k++)
+		ln_s++;
 	for (i = 0; i <= ln_s; i++)
 	{
 		dest[ln_d + i] = src[i];
 	}
 	return (dest);
-}
-
-/**
- * _strln - returns the length of a string
- * @str: the string
- * Return: string length
- */
-int _strln(char *str)
-{
-	int len = 0;
-	int i;
-
-	for (i = 0; str[i] != '\0'; i++)
-		len++;
-	return (len);
 }

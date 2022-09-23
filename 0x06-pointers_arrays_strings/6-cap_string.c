@@ -20,10 +20,8 @@ char *cap_string(char *a)
 		{
 			for (k = 0; k < 13; k++)
 			{
-				if (a[i - 1] == space[k])
-				{
-					a[i] -= 32;
-				}
+				if ((a == 0 || a[i - 1] == space[k]) && (a[i] >= 97 && a[i] <= 122))
+				a[i] -= 32;
 			}
 		}
 	}

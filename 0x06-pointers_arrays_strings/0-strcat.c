@@ -5,6 +5,7 @@
  * char *_strcat
  * @dest: destination string
  * @src: source string
+ * Return: retur concat string
  */
 int _strln(char *str);
 char *_strcat(char *dest, char *src)

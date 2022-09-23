@@ -7,22 +7,23 @@
  */
 char *cap_string(char *a)
 {
-	int i, len;
+	int i, len, k = 0;
+	char space[] = {32, '\t', '\n', 44, ';', 46, '!', '?', '"', '(', ')', '{', '}'};
 	len = 0;
+
 	while (a[len])
 		len++;
 	for (i = 0; i < len; i++)
 	{
 		if (a[i] >= 97 && a[i] <= 122)
 		{
-			if ((a[i-1] < 97 && a[i - 1] > 90) || a[i - 1] < 65)
+			for (k = 0; k < 13; k++)
 			{
-				a[i] -= 32;
-			}
-			if (a[i-1] > 122)
-			{
-				a[i] -= 32;
-			}
+				if (a[i - 1] == space[k])
+				{
+					a[i] -= 32;
+				}
+			}		
 		}
 	}
 	return (a);

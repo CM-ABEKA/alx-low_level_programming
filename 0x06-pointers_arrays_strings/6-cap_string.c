@@ -15,7 +15,6 @@ char *cap_string(char *a)
 
 	for (i = 0; i < len; i++)
 	{
-		
 		if (a[i] >= 100 && a[i] <= 122)
 		{
 			if ((a[i - 1] < 97 && a[i - 1] > 90) || (a[i - 1] > 122))

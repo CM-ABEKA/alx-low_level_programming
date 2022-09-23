@@ -20,6 +20,11 @@ char *_strcat(char *dest, char *src)
 	return (dest);
 }
 
+/**
+ * _strln - returns string length
+ * @str: the string
+ * Return: string length
+ */
 int _strln(char *str)
 {
 	int len = 0;

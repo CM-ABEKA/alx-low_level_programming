@@ -10,7 +10,7 @@ char *string_toupper(char *s)
 	int diff, low = 97, upp = 65, i, len;
 
 	len = 0;
-	while(s[len])
+	while (s[len])
 		len++;
 	for (i = 0; i < len; i++)
 	{

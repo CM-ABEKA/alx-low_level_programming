@@ -1,5 +1,5 @@
 #include "main.h"
-#include "string.h"
+#include <string.h>
 
 /**
  * char *_strcat
@@ -17,4 +17,5 @@ char *_strcat(char *dest, char *src)
 	{
 		dest[ln_d + i] = src[i];
 	}
+	return (dest);
 }

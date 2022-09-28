@@ -3,6 +3,7 @@
 /**
  * is_prime_number - checks wheter number is prime or not
  * @n: the number
+ * @i: the counter
  * Return: (1) if prime and (0) if not prime
  */
 int checkdivisor(int n, int i);

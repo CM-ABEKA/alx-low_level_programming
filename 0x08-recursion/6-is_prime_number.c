@@ -10,9 +10,9 @@ int is_prime_number(int n)
 {
 	if (n == 0)
 		return (0);
-	if ( n == 1)
+	if (n == 1)
 		return (0);
-	else if (checkdivisor(n , n / 2) > 0)
+	else if (checkdivisor(n, n / 2) > 0)
 		return (1);
 	return (0);
 }
@@ -31,5 +31,4 @@ int checkdivisor(int n, int i)
 		return (1);
 	else
 		return (checkdivisor(n, i - 1));
-	
 }

@@ -3,6 +3,7 @@
 /**
  * _sqrt_recursion - finds the natural square root of a number
  * @n: the number
+ * @i: the counter
  * Return: succes(sqrt) fail(-1)
  */
 int root(int n, int i);
@@ -21,7 +22,7 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * sqrt - checks the sqrt
+ * root - checks the sqrt
  * @n: the number
  * @i: counter
  * Return: the root if exists

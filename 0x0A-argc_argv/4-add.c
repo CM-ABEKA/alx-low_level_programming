@@ -10,15 +10,12 @@
  */
 int main(int argc, char *argv[])
 {
-	int mul, i;
+	int sum = 0, i;
 
-	mul = 0;
 	if (argc < 1)
 	{
-		printf("%i", mul);
 		return (0);
 	}
-
 	for (i = 1; i < argc; i++)
 	{
 		if (!atoi(argv[i]))
@@ -26,9 +23,8 @@ int main(int argc, char *argv[])
 			printf("Error\n");
 			return (1);
 		}
-		mul += atoi(argv[i]);
+		sum += atoi(argv[i]);
 	}
-	printf("%i\n", mul);
-
+	printf("%i\n", sum);
 	return (0);
 }

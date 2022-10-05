@@ -3,14 +3,14 @@
 #include "main.h"
 
 /**
- * main - Entry point
- * @argc: count
+ * main - adds numbers
+ * @argc: count of arguments passed
  * @argv: cli argiments array
- * Return: (0) success;
+ * Return: (0) success
  */
 int main(int argc, char *argv[])
 {
-	int sum = 0, i;
+	int sum = 0, i, j;
 
 	if (argc < 1)
 	{
@@ -18,13 +18,17 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		if (!atoi(argv[i]))
+		for (j = 0; argv[i][j]; j++)
 		{
-			printf("Error\n");
-			return (1);
+			if (argv[i][j] < '0' || argv[i][j] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
 		sum += atoi(argv[i]);
 	}
-	printf("%i\n", sum);
+
+	printf("%d\n", sum);
 	return (0);
 }

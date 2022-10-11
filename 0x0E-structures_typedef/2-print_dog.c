@@ -6,16 +6,18 @@
  * print_dog - Entry point
  * @d: the dog struct
  *
- * Description: This is a function that prints the a struct dog
  */
 void print_dog(struct dog *d)
 {
 	if (d == NULL)
 		return;
+
 	if (d->name == NULL)
 		d->name = "(nil)";
+
 	if (d->age <= 0)
 		printf("Age: (nil)\n");
+
 	if (d->owner == NULL)
 		d->name = "(nil)";
 

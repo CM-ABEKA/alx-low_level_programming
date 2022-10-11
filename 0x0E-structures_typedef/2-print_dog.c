@@ -5,7 +5,7 @@
 /**
  * print_dog - Entry point
  * @d: the dog struct
- * Return: 0
+ *
  * Description: This is a function that prints the a struct dog
  */
 void print_dog(struct dog *d)

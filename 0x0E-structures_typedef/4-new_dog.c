@@ -8,24 +8,23 @@
  * @name: name
  * @age: age
  * @owner: owner
- *
+ * Return: the new struct
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
-	
+
 	d = malloc(sizeof(dog_t));
 	if (d == NULL)
 		return (NULL);
-	if (name == NULL || age <0 || owner == NULL)
+	if (name == NULL || age < 0 || owner == NULL)
 		return (NULL);
-
 	(*d).name = malloc(sizeof(char) * (strlen(name) + 1));
 	if (d->name == NULL)
 	{
 		free(d);
-		return(NULL);
+		return (NULL);
 	}
 	d->owner = malloc(sizeof(char) * (strlen(owner) + 1));
 	if (d->owner == NULL)

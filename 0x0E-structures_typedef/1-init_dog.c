@@ -7,7 +7,7 @@
  * @name: name
  * @age: float type age
  * @owner: owner
- * @dog: dog struct
+ * @d: dog struct
  *
  * Description: initializes the struct dog
  */

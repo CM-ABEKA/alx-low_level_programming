@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include "dog.h"
 
-/** free_dog - Entry point
+/**
+ * free_dog - Entry point
  * @d: struct to be freed
  * Return: 0;
  */

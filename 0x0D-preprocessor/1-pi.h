@@ -1,5 +1,6 @@
-#ifndef ACCESS_TO_POWER
-#ifndef ACCESS_TO_POWER
+#ifndef PI_H
+#ifndef PI_H
+
 #define PI 3.14159265359
 
-#endif
+#endif /* PI_H */

@@ -15,7 +15,6 @@ void f(char *s)
 	{
 		putchar(s[i]);
 	}
-	putchar('\n');
 }
 
 /**

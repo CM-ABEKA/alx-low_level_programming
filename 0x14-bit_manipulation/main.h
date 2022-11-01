@@ -4,8 +4,6 @@
 #include <stdio.h>
 #include <string.h>
 
-int _power(int x, int y);
-int _atoi(char * s);
 int _strlen(const char *s);
 unsigned int binary_to_uint(const char *b);
 int _putchar(char c);

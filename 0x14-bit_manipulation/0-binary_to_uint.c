@@ -3,7 +3,7 @@
 /**
  * binary_to_uint - converts a binaty number to unsigned int
  * @b: string of binary chars
- * Return: converted no or 0 
+ * Return: converted no or 0
  */
 unsigned int binary_to_uint(const char *b)
 {
@@ -31,9 +31,8 @@ unsigned int binary_to_uint(const char *b)
 			}
 			sum += value;
 		}
-		else 
+		else
 			return (0);
 	}
 	return (sum);
 }
-

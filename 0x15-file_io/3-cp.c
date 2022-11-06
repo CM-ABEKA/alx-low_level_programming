@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 
-void copy_file(const char *src, const char *dest);
+void copy_file(const char *source, const char *destination);
 
 /**
  * main - Entry point
@@ -24,36 +24,36 @@ int main(int argc, char **argv)
 
 /**
  * copy_file - ...
- * @src: ...
- * @dest: ...
+ * @source: ...
+ * @destination: ...
  *
  * Return: ...
  */
-void copy_file(const char *src, const char *dest)
+void copy_file(const char *source, const char *destination)
 {
 	int ofd, tfd, readed;
 	char buff[1024];
 
-	ofd = open(src, O_RDONLY);
-	if (!src || ofd == -1)
+	ofd = open(source, O_RDONLY);
+	if (!source || ofd == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
 		exit(98);
 	}
 
-	tfd = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	tfd = open(destination, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	while ((readed = read(ofd, buff, 1024)) > 0)
 	{
 		if (write(tfd, buff, readed) != readed || tfd == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destination);
 			exit(99);
 		}
 	}
 
 	if (readed == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
 		exit(98);
 	}
 

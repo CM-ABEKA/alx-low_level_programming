@@ -1,1 +1,2 @@
-ofolder
+*.c
+*.o

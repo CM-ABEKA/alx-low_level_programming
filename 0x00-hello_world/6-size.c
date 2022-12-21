@@ -1,17 +1,25 @@
 #include <stdio.h>
 
 /**
-* main- Entry point
-*
-* Description: 'this program prints the sizes of the various data types on the host machine'
-* Return: 0 (Success)
-*/
+ * main- Entry point
+ *
+ * Description: 'this program prints the sizes of the various data types on the host machine'
+ *
+ * Return: 0 (Success)
+ */
+
 int main(void)
 {
-  printf("Size of a char: %d byte(s)\n", sizeof(char));
-  printf("Size of an int: %d byte(s)\n", sizeof(int));
-  printf("Size of a long int: %d byte(s)\n", sizeof(long int));
-  printf("Size of a long long int: %d byte(s)\n", sizeof(long long int));
-  printf("Size of a float: %d byte(s)\n", sizeof(float));
-  return (0);
+	char ch;
+	int in;
+      	long int lo;
+      	long long int llo;
+      	float fl;
+      
+	printf("Size of a char: %i byte(s)\n", sizeof(ch));
+      	printf("Size of an int: %i byte(s)\n", sizeof(in));
+      	printf("Size of a lont int: %i byte(s)\n", sizeof(lo));
+      	printf("Size of a long long int: %i byte(s)\n", sizeof(llo));
+      	printf("Size of a float: %i byte(s)\n", sizeof(fl));
+      	return (0);
 }

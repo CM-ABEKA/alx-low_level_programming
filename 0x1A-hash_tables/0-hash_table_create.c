@@ -13,7 +13,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	/* creates a pointer to a new hash table*/
 	hash_table_t *table;
 	unsigned long int i;
-	
+
 	table = (hash_table_t *) malloc(sizeof(hash_table_t));
 	if (table == NULL)
 		return (NULL);

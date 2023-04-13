@@ -25,7 +25,7 @@ int main(void)
 					putchar(' ');
 					putchar(k % 10 + '0');
 					putchar(l % 10 + '0');
-					if (i != 9 || k != 9 || l != 9 || i != 9)
+					if (i != 9 && k != 9 && l != 9 && i != 9)
 					{
 						putchar(',');
 						putchar(' ');

@@ -1,43 +1,38 @@
 #include <stdio.h>
 
 /**
- * main - prints number combinations in form 00 01, 00 02...
+ * main - Prints number combinations in the form of 00 01, 00 02, ..., 99 99,
+ *        separated by commas and spaces.
  *
- * Return: 0 on success
+ * Return: Always 0.
  */
 int main(void)
 {
-	int i = 0, j = 0, k = 0, l = 0;
+    int i, j, k, l;
 
-	while (i < 10)
-	{
-		j = 0;
-		while (j < 10)
-		{
-			k = 0;
-			while (k < 10)
-			{
-				l = 1;
-				while (l < 10)
-				{
-					putchar(i % 10 + '0');
-					putchar(j % 10 + '0');
-					putchar(' ');
-					putchar(k % 10 + '0');
-					putchar(l % 10 + '0');
-					if (i + j + k + l != 36)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					l++;
-				}
-				k++;
-			}
-			j++;
-		}
-		i++;
-	}
-	putchar('\n');
-	return (0);
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 10; j++)
+        {
+            for (k = 0; k < 10; k++)
+            {
+                for (l = 0; l < 10; l++)
+                {
+                    putchar(i + '0');
+                    putchar(j + '0');
+                    putchar(' ');
+                    putchar(k + '0');
+                    putchar(l + '0');
+                    if (!(i == 9 && j == 9 && k == 9 && l == 9))
+                    {
+                        putchar(',');
+                        putchar(' ');
+                    }
+                }
+            }
+        }
+    }
+
+    putchar('\n');
+    return 0;
 }

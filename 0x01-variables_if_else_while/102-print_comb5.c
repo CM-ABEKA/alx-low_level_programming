@@ -16,14 +16,14 @@ int main(void)
 		{
 			for (k = 0; k < 10; k++)
 			{
-				for (l = 1; l < 10; l++)
+				for (l = j + 1; l < 10; l++)
 				{
 					putchar(i + '0');
 					putchar(j + '0');
 					putchar(' ');
 					putchar(k + '0');
 					putchar(l + '0');
-					if (!(i == 9 && j == 9 && k == 9 && l == 9))
+					if (!(i == 9 && j == 8 && k == 9 && l == 9))
 					{
 						putchar(',');
 						putchar(' ');

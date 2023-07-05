@@ -9,13 +9,9 @@
 int checkdivisor(int n, int i);
 int is_prime_number(int n)
 {
-	if (n == 0)
+	if (n <= 1)
 		return (0);
-	if (n == 1)
-		return (0);
-	else if (checkdivisor(n, n / 2) > 0)
-		return (1);
-	return (0);
+	return (checkdivisor(n, n / 2));
 }
 
 /**
@@ -26,10 +22,10 @@ int is_prime_number(int n)
  */
 int checkdivisor(int n, int i)
 {
-	if (i > 1 && n % i == 0)
-		return (0);
 	if (i == 1)
 		return (1);
+	if (n % i == 0 && i > 0)
+		return (0);
 	else
 		return (checkdivisor(n, i - 1));
 }

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * free_grid: frees a 2d grid
+ * free_grid - frees memory allocated by malloc
  * @grid: the grid
  * @height:...
  *

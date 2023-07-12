@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * argtostr - concactenates program arguments
+ * argstostr - concactenates program arguments
  * @ac: argument count
  * @av: array of arguments
  *

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Set the current date and time
+current_date=$(date "+%Y%m%d%H%M.%S")
+
+# Specify the directory containing the files
+directory="./"
+
+# Iterate over each file in the directory
+for file in "$directory"/*; do
+  if [[ -f "$file" ]]; then
+    # Modify the created and modified dates of the file to the current date
+    touch -t "$current_date" "$file"
+  fi
+done

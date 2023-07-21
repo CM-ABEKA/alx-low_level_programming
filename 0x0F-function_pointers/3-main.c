@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	char *get_op;
 	int (*res)(int, int);
 
-	if ((argc < 4) || (argc > 4))
+	if (!=4)
 	{
 		printf("Error\n");
 		return (98);

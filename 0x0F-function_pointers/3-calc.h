@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * strict op - Struct op
+ * struct op - Struct op
  *
  * @op: The operator
  * @f: The funciton associated

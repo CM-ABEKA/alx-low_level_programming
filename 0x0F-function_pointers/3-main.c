@@ -7,7 +7,7 @@
  * @argc: Count
  * @argv: parameters
  * description: funciton does arithmetic on two inputs
- * Return: the called operations
+ * Return: the called operation's result
  */
 int main(int argc, char *argv[])
 {
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	char *get_op;
 	int (*res)(int, int);
 
-	if (!=4)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		return (98);

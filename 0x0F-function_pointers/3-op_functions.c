@@ -16,8 +16,8 @@ int op_add(int a, int b)
 
 /**
  * op_sub - returns a subtraction of two integers
- * @a: int 1
- * @b: int 2
+ * @a: integer
+ * @b: integer
  * Return: the difference
  */
 int op_sub(int a, int b)
@@ -30,8 +30,9 @@ int op_sub(int a, int b)
 
 /**
  * op_mul - return the multiplicatio
- * @a: int 1
- * @b: int 2
+ * @a: int
+ * @b: int
+ *
  * Return: The product
  */
 int op_mul(int a, int b)
@@ -44,8 +45,8 @@ int op_mul(int a, int b)
 
 /**
  * op_div - return the division
- * @a: int 1
- * @b: int 2
+ * @a: int
+ * @b: int
  * Return: the division
  */
 int op_div(int a, int b)
@@ -58,8 +59,8 @@ int op_div(int a, int b)
 
 /**
  * op_mod - Returns the modulus of two numbers
- * @a: int 1
- * @b: int 2
+ * @a: int
+ * @b: int
  * Return: modulus
  */
 int op_mod(int a, int b)

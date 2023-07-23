@@ -11,9 +11,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int a, b, sol;
+	int a, b;
 	char *get_op;
-	int (*res)(int, int);
 
 	if (argc != 4)
 	{
@@ -25,22 +24,19 @@ int main(int argc, char *argv[])
 	b = atoi(argv[3]);
 	get_op = argv[2];
 
-	if (get_op_func(argv[2]) == NULL || argv[2][1] != '\0')
+	if (get_op_func(get_op) == NULL || get_op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((*get_op == '/' || *get_op == '%') && (*argv[3] == 0))
+	if ((*get_op == '/' && b == 0) || (*get_op == '%' && b == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
-	res = get_op_func(get_op);
-	sol = res(a, b);
-
-	printf("%d\n", sol);
+	printf("%d\n", get_op_func(get_op)(a, b));
 	return (0);
 }
 

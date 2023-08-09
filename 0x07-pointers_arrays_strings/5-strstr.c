@@ -10,34 +10,19 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j, phrase;
-	char *position;
+	int a = 0, b = 0;
 
-	if (haystack == NULL || needle == NULL)
-		return (NULL);
-
-	for (i = 0; haystack[i] != '\0'; i++)
+	while (haystack[a])
 	{
-		phrase = 1;
-		if (*(haystack + i) == needle[0])
+		while (needle[b])
 		{
-			position = haystack + i;
-			for (j = 0; needle[j] != '\0'; j++)
-			{
-				if (*(position + j) != *(needle + j))
-				{
-					phrase = 1;
-					break;
-				}
-				else
-					phrase = 0;
-			}
-			if (phrase == 0)
-				return (haystack + i);
-			break;
+			if (haystack[a + b] != needle[b])
+				break;
+			b++;
 		}
-
+		if (needle[b] == '\0')
+			return (haystack + a);
+		a++;
 	}
 	return (NULL);
 }
-

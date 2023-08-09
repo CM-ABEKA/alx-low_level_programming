@@ -1,30 +1,28 @@
 #include "main.h"
 
 /**
- * _strspn - returns the number of bytes in the initial segment
+ * _strspn - gets length of prefix substring
  * @s: segment
  * @accept: source of bytes
  * Return: unsigned int of the number of bytes
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int bytes;
-	int i;
-	int len;
-	char *p;
+	unsigned int i, k , j;
 
-	len = 0;
-	while (accept[len])
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		len++;
-	}
-	for (i = 0; i < len; i++)
-	{
-		if (s[i] == accept[i])
+		k = 1;
+		for (j = 0; accept[j] != '\0'; j++)
 		{
-			p[i] = accept[i];
+			if (*(s + i) == *(accept + j))
+			{
+				k = 0;
+				break;
+			}
 		}
+		if (k == 1)
+			break;
 	}
-	bytes = sizeof(*p);
-	return (bytes);
+	return (i);
 }

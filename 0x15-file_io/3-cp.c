@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 
+void copy_file(const char *source, const char *destination);
+
 /**
  * main - Entry point
  * @argc: The argument count
@@ -21,61 +23,49 @@ int main(int argc, char **argv)
 }
 
 /**
- * copy_file - copies content from another file.
- * @source: source file.
- * @destination: destination file.
+ * copy_file - ...
+ * @source: ...
+ * @destination: ...
  *
  * Return: ...
  */
 void copy_file(const char *source, const char *destination)
 {
-int src_fd, dest_fd;
-ssize_t n;
-char buffer[BUFFER_SIZE];
+	int ofd, tfd, readed;
+	char buff[1024];
 
-src_fd = open(source, O_RDONLY);
-if (src_fd == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
-exit(98);
-}
+	ofd = open(source, O_RDONLY);
+	if (!source || ofd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
+		exit(98);
+	}
 
-dest_fd = open(destination, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-if (dest_fd == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", destination);
-close(src_fd);
-exit(99);
-}
+	tfd = open(destination, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((readed = read(ofd, buff, 1024)) > 0)
+	{
+		if (write(tfd, buff, readed) != readed || tfd == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destination);
+			exit(99);
+		}
+	}
 
-while ((n = read(src_fd, buffer, BUFFER_SIZE)) > 0)
-{
-if (write(dest_fd, buffer, n) != n)
-{
-dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", destination);
-close(src_fd);
-close(dest_fd);
-exit(99);
-}
-}
+	if (readed == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
+		exit(98);
+	}
 
-if (n == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
-close(src_fd);
-close(dest_fd);
-exit(98);
-}
+	if (close(ofd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ofd);
+		exit(100);
+	}
 
-if (close(src_fd) == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src_fd);
-exit(100);
-}
-
-if (close(dest_fd) == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest_fd);
-exit(100);
-}
+	if (close(tfd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", tfd);
+		exit(100);
+	}
 }

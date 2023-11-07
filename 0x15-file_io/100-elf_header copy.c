@@ -15,8 +15,7 @@ void printFileVersion(unsigned char *magicNumbers);
 void printOsAbi(unsigned char *magicNumbers);
 void printAbiVersion(unsigned char *magicNumbers);
 void printFileType(unsigned int fileType, unsigned char *magicNumbers);
-void printEntryPoint(unsigned long int entryPoint,
-unsigned char *magicNumbers);
+void printEntryPoint(unsigned long int entryPoint, unsigned char *magicNumbers);
 void closeElfFile(int fileDescriptor);
 
 /**
@@ -231,7 +230,7 @@ printf("  Entry point address:               ");
 if (magicNumbers[EI_DATA] == ELFDATA2MSB)
 {
 entryPoint = ((entryPoint << 8) & 0xFF00FF00) |
-((entryPoint >> 8) & 0xFF00FF);
+        ((entryPoint >> 8) & 0xFF00FF);
 entryPoint = (entryPoint << 16) | (entryPoint >> 16);
 }
 
@@ -258,15 +257,13 @@ exit(98);
 }
 
 /**
- * main - Displays the information contained in the ELF
- * header at the start of an ELF file.
+ * main - Displays the information contained in the ELF header at the start of an ELF file.
  * @argc: The number of arguments supplied to the program.
  * @argv: An array of pointers to the arguments.
  *
  * Return: 0 on success.
  *
- * Description: If the file is not an ELF File or the
- * function fails, exit with code 98.
+ * Description: If the file is not an ELF File or the function fails, exit with code 98.
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
@@ -296,6 +293,7 @@ closeElfFile(elfFile);
 dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 exit(98);
 }
+
 checkElfFile(header->e_ident);
 printf("ELF Header:\n");
 printMagicNumbers(header->e_ident);
@@ -306,6 +304,7 @@ printOsAbi(header->e_ident);
 printAbiVersion(header->e_ident);
 printFileType(header->e_type, header->e_ident);
 printEntryPoint(header->e_entry, header->e_ident);
+
 free(header);
 closeElfFile(elfFile);
 return (0);
